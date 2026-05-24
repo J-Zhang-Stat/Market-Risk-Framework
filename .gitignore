@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+data/raw/
+data/processed/
+*.egg-info/
+Market_risk (1).ipynb
+QA (4).pdf
+
