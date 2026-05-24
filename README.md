@@ -56,8 +56,6 @@ src/market_risk/
   var.py            VaR, ES, Monte Carlo, EWMA, and rolling VaR models
 scripts/
   run_analysis.py   End-to-end reproducible workflow
-docs/
-  methodology.md    Model formulas and design notes
 tests/
   test_backtesting.py
   test_var_models.py
