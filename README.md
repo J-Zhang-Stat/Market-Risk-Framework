@@ -1,29 +1,17 @@
 # Multi-Asset Market Risk Framework
 
-This repository packages an exploratory market-risk notebook into a reproducible Python project suitable for GitHub portfolio review. It covers the workflow described in my quantitative risk analyst internship experience: multi-asset factor exposures, Value-at-Risk models, VaR backtesting, stress testing, and risk-aware portfolio rebalancing.
+This repository covers the workflow in my quantitative risk analyst internship experience: multi-asset factor exposures, Value-at-Risk models, VaR backtesting, stress testing, and risk-aware portfolio rebalancing.
 
 ## What It Demonstrates
 
-- **Portfolio risk management:** equities, bonds, commodities, FX proxy, and benchmark data are mapped to macro factors such as equity market, rates, commodities, USD, and volatility.
+- **Portfolio risk management:** equities, bonds, commodities, and FX data are mapped to macro risk factors such as equity market, rates, commodities, USD, and volatility.
 - **Factor exposure modeling:** full-sample and rolling OLS betas quantify asset and portfolio sensitivity to macro risk drivers.
-- **VaR and ES modeling:** historical simulation, parametric normal VaR, Monte Carlo VaR, EWMA volatility VaR, and EWMA-t VaR.
+- **VaR and ES modeling:** historical simulation, parametric normal VaR, and Monte Carlo VaR, improved modeling method with EWMA volatility VaR, and EWMA-t VaR.
 - **Backtesting:** Kupiec unconditional coverage, Christoffersen independence, joint conditional coverage, exception counts, and Basel traffic-light diagnostics.
 - **Stress testing:** historical and hypothetical scenarios such as 2008 crisis, COVID-style shock, inflation/rate shock, and moderate bear market.
 - **Risk-aware rebalancing:** optimization-based reallocation seeks a target reduction in 99% one-day VaR while preserving asset-class constraints.
 
-## Quick Start
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/run_analysis.py --source synthetic --output-dir reports
-python -m unittest discover -s tests
-```
-
-The default run uses deterministic synthetic market data so the project works without internet access. To run with public Yahoo Finance data, use:
-
-```bash
-python scripts/run_analysis.py --source yfinance --output-dir reports
-```
 
 ## Output Files
 
@@ -84,6 +72,4 @@ tests/
 | Performed stress testing under market shocks | `stress.py`, `reports/stress_summary.csv` |
 | Designed risk-based hedging/rebalancing strategies | `rebalancing.py`, `reports/rebalanced_weights.csv` |
 
-## Notes
 
-The original exploratory notebook is retained for provenance, while the production-style code in `src/market_risk` is modular, testable, and easier for recruiters or hiring managers to review. The framework is intended for educational and portfolio demonstration purposes, not live investment or trading advice.
